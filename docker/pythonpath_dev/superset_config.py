@@ -112,3 +112,7 @@ try:
     )
 except ImportError:
     logger.info("Using default Docker config...")
+
+# append by user
+# request idle timeout seconds, less than elb idle timeout
+SUPERSET_WEBSERVER_TIMEOUT=4000
