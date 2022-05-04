@@ -70,6 +70,8 @@ services:
     depends_on: *superset-depends-on
     user: "root"
     volumes: *superset-volumes
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://172.17.0.1/health"]
 
   superset-worker-beat:
     image: *superset-image
@@ -80,6 +82,8 @@ services:
     depends_on: *superset-depends-on
     user: "root"
     volumes: *superset-volumes
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://172.17.0.1/health"]
 
 volumes:
   superset_home:
